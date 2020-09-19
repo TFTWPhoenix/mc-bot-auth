@@ -1,10 +1,11 @@
-const http = require("http");
+const https = require("https");
 const { Http2ServerRequest } = require("http2");
+
 
 function authRequest(username, attemptedToken) {
 
     // This will send an authentication request attempting to authenticate username with the token attemptedToken using authServer.
-    http.get("http://apmunute.me/testSession.php?username=" + username + "&attemptedToken=" + attemptedToken, function(response) {
+    https.get("https://apmunute.me/testSession.php?username=" + username + "&attemptedToken=" + attemptedToken, function(response) {
 
         console.log(response);
 
